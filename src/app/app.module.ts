@@ -1,15 +1,17 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
-import { CabeceraComponent } from "./cabecera/cabecera.component";
+import { HeaderComponent } from "./header/header.component";
 
 @NgModule({
     declarations: [
         AppComponent,
-        CabeceraComponent
+        HeaderComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        FormsModule //<-- importa FormsModule antes de vincuar con [(ngModel)]
     ],
     providers: [
             ],
