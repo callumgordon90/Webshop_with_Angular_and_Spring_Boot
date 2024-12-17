@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Categoria } from "../model/categoria";
 import { Libro } from "../model/libro";
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 
 @Component({
     selector: 'app-menu',
@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
         CATEGORIAS = [{'idCategoria': 1, 'nombreCategoria' : 'Informatica'},
             {'idCategoria': 2, 'nombreCategoria' : 'Novelas'},
             {'idCategoria' : 3, 'nombreCategoria' : 'Turismo'}];
-        categories : Categoria[] = this.CATEGORIAS;
+        categorias : Categoria[] = this.CATEGORIAS;
         filtro : Libro = new Libro();
         mensaje : string = "";
         selectedCategoria : Categoria | undefined = undefined;
