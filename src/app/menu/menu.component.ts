@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { Categoria } from "../model/categoria";
 import { Libro } from "../model/libro";
 import { FormsModule } from "@angular/forms";
@@ -6,7 +7,7 @@ import { FormsModule } from "@angular/forms";
 @Component({
     selector: 'app-menu',
     standalone: true,
-    imports: [FormsModule], // Import FormsModule here
+    imports: [FormsModule, CommonModule],// Import here
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.css']
 })
