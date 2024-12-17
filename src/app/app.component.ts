@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from "@angular/forms";
@@ -16,7 +17,7 @@ import { PortadaComponent } from "./portada/portada.component";
             FooterComponent,
             PortadaComponent,
             RouterOutlet,
-            FormsModule
+            CommonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
