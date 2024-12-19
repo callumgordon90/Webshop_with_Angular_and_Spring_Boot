@@ -1,17 +1,19 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Categoria } from "../model/categoria";
 import { Libro } from "../model/libro";
 import { FormsModule } from "@angular/forms";
+import { CategoriaService } from "../services/categoria.service";
 
 @Component({
     selector: 'app-menu',
     standalone: true,
     imports: [FormsModule, CommonModule],// Import here
     templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.css']
+    styleUrls: ['./menu.component.css'], 
+    providers: [CategoriaService]
 })
-    export class MenuComponent {
+    export class MenuComponent implements OnInit{
 
         /*
         CATEGORIAS = [{'idCategoria': 1, 'nombreCategoria' : 'Informatica'},
@@ -22,7 +24,11 @@ import { FormsModule } from "@angular/forms";
         filtro : Libro = new Libro();
         mensaje : string = "";
         selectedCategoria : Categoria | undefined = undefined;
-        
+        constructor(private categoriaService: CategoriaService){};
+
+        ngOnInit():void {
+            this.categorias = this.categoriaService.getCategories();
+        }
 
         buscarOnClick() {
             if (this.filtro.titulo !== '' && this.filtro.titulo !== undefined){
