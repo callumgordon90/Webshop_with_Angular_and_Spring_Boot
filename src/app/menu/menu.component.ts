@@ -12,13 +12,17 @@ import { FormsModule } from "@angular/forms";
     styleUrls: ['./menu.component.css']
 })
     export class MenuComponent {
+
+        /*
         CATEGORIAS = [{'idCategoria': 1, 'nombreCategoria' : 'Informatica'},
             {'idCategoria': 2, 'nombreCategoria' : 'Novelas'},
             {'idCategoria' : 3, 'nombreCategoria' : 'Turismo'}];
-        categorias : Categoria[] = this.CATEGORIAS;
+            */
+        categorias : Categoria[] = [];
         filtro : Libro = new Libro();
         mensaje : string = "";
         selectedCategoria : Categoria | undefined = undefined;
+        
 
         buscarOnClick() {
             if (this.filtro.titulo !== '' && this.filtro.titulo !== undefined){
