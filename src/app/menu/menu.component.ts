@@ -27,7 +27,11 @@ import { CategoriaService } from "../services/categoria.service";
         constructor(private categoriaService: CategoriaService){};
 
         ngOnInit():void {
-            this.categorias = this.categoriaService.getCategories();
+            this.getCategorias();
+        }
+        getCategorias(): void {
+            this.categoriaService.getCategorias().then(
+                categorias => this.categorias = categorias);
         }
 
         buscarOnClick() {
