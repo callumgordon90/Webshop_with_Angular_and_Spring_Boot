@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Categoria } from '../model/categoria'; 
 import { Respuesta } from '../model/respuesta';
 
@@ -26,11 +26,26 @@ export class CategoriaService {
         });
     }
         */
+    /*
     getCategorias():Promise<Categoria[]>{
         return this.http.get<Respuesta>(this.categoriasUrl).toPromise().then(
             response => response.datos as Categoria[]
         ).catch(this.handleError);
     }
+    */
+
+    getCategorias(): Promise<Categoria[]> {
+        return this.http.get<Respuesta>(this.categoriasUrl).toPromise().then(
+          (response) => {
+            // Add null-check for response and response.datos
+            if (response && response.datos) {
+              return response.datos as Categoria[];
+            } else {
+              throw new Error('Invalid response format or missing datos field');
+            }
+          }
+        ).catch(this.handleError);
+      }
 
     private handleError(error: any):Promise<any>{
         console.error('Ha Ocurrido un error', error);
