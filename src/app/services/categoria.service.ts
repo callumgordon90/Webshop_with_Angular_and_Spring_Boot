@@ -5,7 +5,11 @@ import { Respuesta } from '../model/respuesta';
 
 //import { CATEGORIAS } from './mock-categories';
 
-@Injectable()
+@Injectable(
+    {
+        providedIn: 'root', // Ensure the service is provided globally
+      }
+)
 
 export class CategoriaService {
     /*
