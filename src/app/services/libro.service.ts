@@ -19,20 +19,20 @@ export class LibroService {
         return this.http.post<Respuesta>(
             this.librosUrl + '/filtro', JSON.stringify(filtro),
                     {headers: this.headers}).toPromise()
-            .then(response => response.datos as Libro[])
+            .then(response => response?.datos as Libro[])
             .catch(this.handleError); 
     }
 
     getLibrosFiltro(valor : string): Promise<Libro[]>{
         return this.http.get<Respuesta>(
             this.librosUrl + '/tituloAutor?valor=' + valor).toPromise()
-        .then(response => response.datos as Libro[])
+        .then(response => response?.datos as Libro[])
         .catch(this.handleError);
     }
 
     getLibro(id:number): Promise<Libro> {
         return this.http.get<Respuesta>(this.librosUrl + '/' + id).toPromise()
-            .then(response => response.datos as Libro)
+            .then(response => response?.datos as Libro)
             .catch(this.handleError);
     }
 

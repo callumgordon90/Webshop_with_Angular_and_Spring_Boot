@@ -18,8 +18,8 @@ export class PedidoService{
 
     getPedido(id: number): Promise<Pedido>{
         return this.http.get<Respuesta>(
-            this.pedidosUrl.Url + "/" + id).toPromise()
-                .then(response => response.datos as Pedido)
+            this.pedidosUrl + "/" + id).toPromise()
+                .then(response => response?.datos as Pedido)
                 .catch(this.handleError);
     }
 
@@ -33,7 +33,7 @@ export class PedidoService{
     getPedidosByLocalizador(localizador: String) : Promise<Pedido>{
         return this.http.get<Respuesta>(
             this.pedidosUrl + '?localizador=' + localizador).toPromise()
-        .this(response => response.datos[0] as Pedido)
+        .then(response => response?.datos[0] as Pedido)
         .catch(this.handleError);
     }
 
@@ -51,7 +51,7 @@ export class PedidoService{
         pedido.idPedido = id;
         pedido.estado = estado;
         return this.http.put<Respuesta>(
-            this.pedidosUrl + '/' + id, JSPN.stringify(pedido),
+            this.pedidosUrl + '/' + id, JSON.stringify(pedido),
                     {headers: this.headers}).toPromise()
             .then(response => response as Respuesta)
             .catch(this.handleError);
