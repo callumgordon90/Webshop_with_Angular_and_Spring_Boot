@@ -1,4 +1,4 @@
-const {router} = require ('express');
+const {Router} = require ('express');
 Pedido = require('../models/pedidoModel.js');
 const router = Router();
 

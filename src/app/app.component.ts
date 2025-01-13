@@ -6,7 +6,9 @@ import { FormsModule } from "@angular/forms";
 import { MenuComponent } from "./menu/menu.component";
 import { FooterComponent } from "./footer/footer.component";
 import { PortadaComponent } from "./portada/portada.component";
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
             PortadaComponent,
             RouterOutlet,
             CommonModule,
+            HttpClientModule,
+            
             
   ],
   templateUrl: './app.component.html',

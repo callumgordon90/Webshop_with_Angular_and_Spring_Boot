@@ -6,7 +6,7 @@ app.use(express.json());
 
 const categoriasRoutes = require('./routes/categoriaRoutes');
 const librosRoutes = require('./routes/libroRoutes');
-const cestaRoutes = require('.routes/cestaRoutes');
+const cestaRoutes = require('./routes/cestaRoutes');
 const pedidosRoutes = require('./routes/pedidoRoutes');
 
 app.use('/api/categorias', categoriasRoutes);
@@ -18,3 +18,4 @@ const port = 3000;
 app.listen(port);
 
 console.log(`Servidor está corriendo en: ${port}`);
+
