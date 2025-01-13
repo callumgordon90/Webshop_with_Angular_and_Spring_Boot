@@ -14,6 +14,7 @@ import { PortadaComponent } from "./portada/portada.component";
 import { CategoriaService } from "./services/categoria.service";
 import { LibroService } from "./services/libro.service";
 import { CestaService } from "./services/cesta.service";
+import { PedidoService } from "./services/pedido.service";
 
 @NgModule({
     declarations: [
@@ -30,7 +31,7 @@ import { CestaService } from "./services/cesta.service";
         HttpClientModule
     ],
     providers: [
-                CategoriaService, LibroService, CestaService
+                CategoriaService, LibroService, CestaService, PedidoService
             ],
     bootstrap: [AppComponent]
 })
