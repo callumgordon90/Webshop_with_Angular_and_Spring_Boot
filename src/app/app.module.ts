@@ -13,6 +13,7 @@ import { PortadaComponent } from "./portada/portada.component";
 //Import services:
 import { CategoriaService } from "./services/categoria.service";
 import { LibroService } from "./services/libro.service";
+import { CestaService } from "./services/cesta.service";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,7 @@ import { LibroService } from "./services/libro.service";
         HttpClientModule
     ],
     providers: [
-                CategoriaService, LibroService
+                CategoriaService, LibroService, CestaService
             ],
     bootstrap: [AppComponent]
 })

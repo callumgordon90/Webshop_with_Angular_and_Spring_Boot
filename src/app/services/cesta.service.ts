@@ -26,4 +26,24 @@ export class CestaService {
         return Promise.reject(error.message || error);
     }
 
+    addItemCesta(localizador: string, item: ItemCesta): Promise<Cesta>{
+        return this.http.post<Respuesta>(this.cestaUrl + "/" + localizador + "/items"
+            ,
+                JSON.stringify(item), {headers: this.headers}).toPromise()
+                    .then(response => response.datos as Cesta)
+                    .catch(this.handleError);
+    }
+
+    getCesta(localizador:any): Promise<Cesta> {
+        return this.http.get<Respuesta>(this.cestaUrl + "/" + localizador).toPromise()
+            .then(response => response.datos as Cesta)
+            .catch(this.handleError);
+    }
+
+    confirmarPedido(localizador: string, pedido: Pedido): Promise<Pedido>{
+        return this.http.post<Respuesta>(this.cetaUrl + "/" + localizador + "/pedido",
+            JSON.stringify(pedido), {headers: this.headers}).toPromise()
+            .then(response => response.datos as Pedido)
+            .catch(this.handleError);
+    }
 }
