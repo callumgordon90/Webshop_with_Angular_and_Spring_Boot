@@ -1,15 +1,18 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
+//Import components:
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { MenuComponent } from "./menu/menu.component";
 import { FooterComponent } from "./footer/footer.component";
 import { PortadaComponent } from "./portada/portada.component";
 
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+//Import services:
 import { CategoriaService } from "./services/categoria.service";
+import { LibroService } from "./services/libro.service";
 
 @NgModule({
     declarations: [
@@ -26,7 +29,7 @@ import { CategoriaService } from "./services/categoria.service";
         HttpClientModule
     ],
     providers: [
-                CategoriaService
+                CategoriaService, LibroService
             ],
     bootstrap: [AppComponent]
 })
